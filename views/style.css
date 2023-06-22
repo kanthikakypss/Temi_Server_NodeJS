@@ -1,0 +1,50 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100&family=Mitr:wght@400;700&display=swap');*/
+
+* {
+  touch-action: manipulation !important;
+}
+
+.App {
+  width: 100vw !important;
+  height: 90vh !important;
+  background-color: #E4FAFF;
+  display: flex;
+  flex-direction: row;
+  margin: 0 !important;
+  padding: 20px;
+  font-family: 'Mitr', sans-serif;
+}
+
+
+.lo-btn1 {
+width: 100%;
+justify-content: flex-end;
+align-items: flex-end;
+height: 100%;
+display: flex;
+flex-direction: column;
+padding: 20px;
+}
+.lo-btn2 {
+width: 100%;
+display: flex;
+flex-direction: column;
+padding: 20px 50px;
+justify-content: flex-end;
+align-items: flex-end;
+}
+
+.arrow {
+  border-radius: 40px !important;
+}
+
+.btn-cm {
+  margin: 5px !important;
+}
+
+.ant-btn{
+  width: 170px !important;
+  height: auto !important;
+  padding: 20px !important;
+  font-size: 20px !important;
+}

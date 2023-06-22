@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> 
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <style>
+      * {
+  touch-action: manipulation !important;
+}
+
+.App {
+  width: 100vw !important;
+  height: 90vh !important;
+  background-color: #E4FAFF;
+  display: flex;
+  flex-direction: row;
+  margin: 0 !important;
+  padding: 20px;
+  font-family: 'Mitr', sans-serif;
+}
+
+
+.lo-btn1 {
+width: 100%;
+justify-content: flex-end;
+align-items: flex-end;
+height: 100%;
+display: flex;
+flex-direction: column;
+padding: 20px;
+}
+.lo-btn2 {
+width: 100%;
+display: flex;
+flex-direction: column;
+padding: 20px 50px;
+justify-content: flex-end;
+align-items: flex-end;
+}
+
+.arrow {
+  border-radius: 40px !important;
+}
+
+.btn-cm {
+  margin: 5px !important;
+}
+
+.ant-btn{
+  width: 170px !important;
+  height: auto !important;
+  padding: 20px !important;
+  font-size: 20px !important;
+}
+    </style>
+
+    <title>Realtime</title>
+  </head>
+  <body>
+    <div class="App">
+      <div class="lo-btn1">
+        <div
+          style="
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-bottom: 10px;
+          "
+        >
+          <button type="button" id="clickgofront" class="btn btn-dark ant-btn arrow">
+            <svg
+              width="1em"
+              height="1em"
+              viewBox="0 0 16 16"
+              class="bi bi-arrow-up"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          style="display: flex; justify-content: space-around; width: 100%"
+          
+        >
+          <button type="button" id="clickgoleft" class="btn btn-dark ant-btn arrow">
+            <svg
+              width="1em"
+              height="1em"
+              viewBox="0 0 16 16"
+              class="bi bi-arrow-return-left"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"
+              />
+            </svg>
+          </button>
+
+          <button type="button" id="clickgoright" class="btn btn-dark ant-btn arrow">
+            <svg
+              width="1em"
+              height="1em"
+              viewBox="0 0 16 16"
+              class="bi bi-arrow-return-right"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M1.5 1.5A.5.5 0 0 0 1 2v4.8a2.5 2.5 0 0 0 2.5 2.5h9.793l-3.347 3.346a.5.5 0 0 0 .708.708l4.2-4.2a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 8.3H3.5A1.5 1.5 0 0 1 2 6.8V2a.5.5 0 0 0-.5-.5z"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="lo-btn2">
+        <button type="button" id="clickSaveA" class="btn btn-dark ant-btn btn-cm">
+          <svg
+            width="1em"
+            height="1em"
+            viewBox="0 0 16 16"
+            class="bi bi-bookmark-check"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"
+            />
+            <path
+              fill-rule="evenodd"
+              d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"
+            />
+          </svg>
+          SAVE A
+        </button>
+ 
+        <button type="button" id="clickSaveB" class="btn btn-dark ant-btn btn-cm">
+          <svg
+            width="1em"
+            height="1em"
+            viewBox="0 0 16 16"
+            class="bi bi-bookmark-check"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"
+            />
+            <path
+              fill-rule="evenodd"
+              d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"
+            />
+          </svg>
+          SAVE B
+        </button>
+
+        <button type="button" id="clickSpin" class="btn btn-dark ant-btn btn-cm">
+          <svg
+            width="1em"
+            height="1em"
+            viewBox="0 0 16 16"
+            class="bi bi-arrow-clockwise"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"
+            />
+            <path
+              d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"
+            />
+          </svg>
+          SPIN
+        </button>
+
+        <button type="button" id="clickPlay" class="btn btn-dark ant-btn btn-cm">
+          <svg
+            width="1em"
+            height="1em"
+            viewBox="0 0 16 16"
+            class="bi bi-collection-play"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M14.5 13.5h-13A.5.5 0 0 1 1 13V6a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5zm-13 1A1.5 1.5 0 0 1 0 13V6a1.5 1.5 0 0 1 1.5-1.5h13A1.5 1.5 0 0 1 16 6v7a1.5 1.5 0 0 1-1.5 1.5h-13zM2 3a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 0-1h-11A.5.5 0 0 0 2 3zm2-2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7A.5.5 0 0 0 4 1z"
+            />
+            <path
+              fill-rule="evenodd"
+              d="M6.258 6.563a.5.5 0 0 1 .507.013l4 2.5a.5.5 0 0 1 0 .848l-4 2.5A.5.5 0 0 1 6 12V7a.5.5 0 0 1 .258-.437z"
+            />
+          </svg>
+          PLAY
+        </button>
+      </div>
+    </div>
+    <script>
+  let socket = io.connect("http://192.168.50.65:4000");
+
+  let gofrontBtn = document.querySelector("#clickgofront");
+  let goleftBtn = document.querySelector("#clickgoleft");
+  let gorigtBtn = document.querySelector("#clickgoright");
+  let gosaveaBtn = document.querySelector("#clickSaveA");
+  let gosavebBtn = document.querySelector("#clickSaveB");
+  let gospinBtn = document.querySelector("#clickSpin");
+  let goplayBtn = document.querySelector("#clickPlay");
+
+  gofrontBtn.addEventListener("click",(e)=>{
+    console.log("Front")
+    socket.emit("robot_gofront")
+  })
+  goleftBtn.addEventListener("click",(e)=>{
+    console.log("Left")
+    socket.emit("robot_goleft")
+  })
+  gorigtBtn.addEventListener("click",(e)=>{
+    console.log("Right")
+    socket.emit("robot_goright")
+  })
+  gosaveaBtn.addEventListener("click",(e)=>{
+    console.log("SaveA")
+    socket.emit("robot_savea")
+  })
+  gosavebBtn.addEventListener("click",(e)=>{
+    console.log("SaveB")
+    socket.emit("robot_saveb")
+  })
+  gospinBtn.addEventListener("click",(e)=>{
+    console.log("Spin")
+    socket.emit("robot_spin")
+  })
+  goplayBtn.addEventListener("click",(e)=>{
+    console.log("Play")
+    socket.emit("robot_play")
+  })
+
+  socket.on("robot_gofront2",data=>{
+    console.log("Gofront2")
+  })
+
+  socket.on("robot_goleft",data=>{
+    console.log("GoLeft")
+  })
+
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+  </body>
+</html>
